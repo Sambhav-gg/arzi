@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f7f3ea;
+  --card: #fffdf8;
+  --ink: #1f1d1a;
+  --muted: #6b655b;
+  --line: #e4dccb;
+  --accent: #c2410c;
+  --accent-soft: #fde9dc;
+  --indigo: #1e3a8a;
+  --ok: #166534;
+  --warn: #92400e;
+  --warn-soft: #fef3c7;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-indigo: var(--indigo);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-sans: var(--font-sans-latin), var(--font-sans-deva), system-ui, sans-serif;
+  --font-serif: var(--font-serif-latin), var(--font-serif-deva), Georgia, serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+#print-area {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm 18mm;
+  }
+  body {
+    background: #fff;
+  }
+  #print-area {
+    display: block;
+    white-space: pre-wrap;
+    font-family: var(--font-serif);
+    font-size: 12pt;
+    line-height: 1.55;
+    color: #000;
+  }
+}

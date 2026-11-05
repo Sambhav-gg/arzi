@@ -1,0 +1,17 @@
+Project: Arzi (अर्ज़ी)
+Event: BharatCode Build League
+Direction: Everyday assistance
+
+What it does:
+Arzi helps people in India write formal complaints and applications. You describe
+your problem in Hindi, English, Hinglish or another Indian language. Arzi picks the
+right document (RTI application, RTI first appeal, bank complaint, consumer notice,
+or civic/utility complaint), asks for the missing details, drafts the letter in the
+language you choose, checks it, and gives a step-by-step "what to do next" list.
+
+How BharatCode is used:
+- Model API: BharatCode chat completions (default model: qwen-3.8-27b)
+- Call 1 (intake): classifies the problem and extracts details already given
+- Call 2 (drafting): writes the formal document from verified rules and the user's facts
+- Fees, deadlines, legal sections and portals come from a human-checked knowledge
+  file (src/lib/documents.ts), not from the model
